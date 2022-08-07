@@ -1,8 +1,6 @@
 package org.example;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Employee {
@@ -16,6 +14,10 @@ public class Employee {
   private String firstName;
 
   private String lastName;
+
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "employee_account_id")
+  private Account account;
 
   protected Employee() {
   }
@@ -56,5 +58,13 @@ public class Employee {
 
   public void setLastName(String lastName) {
     this.lastName = lastName;
+  }
+
+  public Account getAccount() {
+    return account;
+  }
+
+  public void setAccount(Account account) {
+    this.account = account;
   }
 }

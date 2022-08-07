@@ -9,8 +9,9 @@
       <property name="javax.persistence.jdbc.url" value="jdbc:h2:./db/test;FILE_LOCK=SOCKET"/>
       <property name="javax.persistence.jdbc.user" value="sa"/>
 
-      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
       <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
     </properties>
   </persistence-unit>
 </persistence>

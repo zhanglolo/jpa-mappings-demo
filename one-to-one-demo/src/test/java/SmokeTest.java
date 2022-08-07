@@ -28,7 +28,7 @@ class SmokeTest {
   @AfterEach
   void after() {
     if (transaction != null)
-      transaction.rollback();
+      transaction.commit();
     if (entityManager != null)
       entityManager.close();
     if (entityManagerFactory != null)

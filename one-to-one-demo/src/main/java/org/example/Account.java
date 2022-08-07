@@ -3,6 +3,7 @@ package org.example;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Account {
@@ -12,6 +13,9 @@ public class Account {
   private Integer id;
 
   private String num;
+
+  @OneToOne(mappedBy = "account")
+  private Employee employee;
 
   protected Account() {
   }
@@ -34,5 +38,13 @@ public class Account {
 
   public void setNum(String number) {
     this.num = number;
+  }
+
+  public Employee getEmployee() {
+    return employee;
+  }
+
+  public void setEmployee(Employee employee) {
+    this.employee = employee;
   }
 }
